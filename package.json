@@ -1,0 +1,41 @@
+{
+  "name": "chores",
+  "version": "0.0.1",
+  "description": "A simple chores app",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craveytrain/chores.git"
+  },
+  "keywords": [
+    "chores"
+  ],
+  "author": "Mike Cravey <techie@craveytrain.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craveytrain/chores/issues"
+  },
+  "homepage": "https://github.com/craveytrain/chores#readme",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "redux": "^3.5.2",
+    "static-server": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.5.4",
+    "mocha": "^2.5.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

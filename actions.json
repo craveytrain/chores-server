@@ -1,0 +1,88 @@
+{
+	"type": "SET_CHILDREN",
+	"children": {
+		"..."
+	}
+}
+
+{
+	"type": "ADD_CHILD",
+	"child": {
+		"child1": {
+			"name": "Child 1"
+		}
+	}
+}
+
+{
+	"type": "DELETE_CHILD",
+	"child": "child1"
+}
+
+{
+	"type": "RENAME_CHILD",
+	"child": "child1",
+	"name": "Child 1"
+}
+
+{
+	"type": "SET_DATE",
+	"date": "20160530"
+}
+
+{
+	"type": "ASSIGN_CHORE",
+	"chore": "makeBed",
+	"child": "child1",
+	"date": "20160530"
+}
+
+{
+	"type": "UNASSIGN_CHORE",
+	"chore": "makeBed",
+	"child": "child1",
+	"date": "20160530"
+}
+
+{
+	"type": "DO_CHORE",
+	"chore": "makeBed",
+	"child": "child1",
+	"date": "20160530"
+}
+
+{
+	"type": "UNDO_CHORE",
+	"chore": "makeBed",
+	"child": "child1",
+	"date": "20160530"
+}
+
+{
+	"type": "SET_CHORES",
+	"chore": "..."
+}
+
+{
+	"type": "ADD_CHORE",
+	"chore": {
+		"makeBed": {
+			"name": "Make bed"
+		}
+	}
+}
+
+{
+	"type": "DELETE_CHORE",
+	"chore": "makeBed"
+}
+
+{
+	"type": "SET_VIEW",
+	"view": 7
+}
+
+{
+	"type": "SET_LAST_DATE",
+	"date": "20160530"
+}

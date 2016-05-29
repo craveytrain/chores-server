@@ -1,0 +1,30 @@
+{
+	"children": {
+		"child1": {
+			"name": "Child 1",
+			"20160529": {
+				"makeBed": {
+					"name": "Make bed",
+					"done": false
+				},
+				"clearTable": {
+					"name": "Clear table",
+					"done": true
+				}
+			},
+			"totalDone": 10
+		}
+	},
+	"chores": {
+		"makeBed": {
+			"name": "Make bed"
+		},
+		"clearTable": {
+			"name": "Clear table"
+		}
+	},
+	"view": {
+		"daysBack": 7,
+		"lastDate": "20160530"
+	}
+}
