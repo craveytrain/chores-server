@@ -13,3 +13,11 @@ export function addChore( state, chore ) {
 		chores: chores.merge(chore)
 	});
 }
+
+export function deleteChore( state, choreId ) {
+	const chores = state.get('chores');
+
+	return state.merge({
+		chores: chores.delete(choreId)
+	});
+}

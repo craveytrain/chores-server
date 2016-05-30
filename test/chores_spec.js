@@ -8,7 +8,8 @@ import {
 
 import {
     setChores,
-    addChore
+    addChore,
+    deleteChore
 } from '../src/chores';
 
 describe( 'application logic', () => {
@@ -79,6 +80,55 @@ describe( 'application logic', () => {
                 } ) );
 
         } );
+
+        it( 'converts to immutable', () => {
+            const state = {
+                makeBed: {
+                    name: 'Make bed'
+                }
+            };
+            const chore = {
+                clearTable: {
+                    name: 'Clear table'
+                }
+            };
+            const initialState = setChores( Map(), state );
+            const nextState = addChore( initialState, chore );
+            expect( nextState )
+                .to.equal( Map( {
+                    chores: Map( {
+                        makeBed: Map( {
+                            name: 'Make bed'
+                        } ),
+                        clearTable: Map( {
+                            name: 'Clear table'
+                        } )
+                    } )
+                } ) );
+
+        } );
     } );
 
+    describe( 'deleteChore', () => {
+        it( 'deletes a chore from the state', () => {
+            const state = Map( {
+                makeBed: Map( {
+                    name: 'Make bed'
+                } ),
+                clearTable: Map( {
+                    name: 'Clear table'
+                } )
+            } );
+            const initialState = setChores( Map(), state );
+            const nextState = deleteChore( initialState, 'clearTable' );
+            expect( nextState )
+                .to.equal( Map( {
+                    chores: Map( {
+                        makeBed: Map( {
+                            name: 'Make bed'
+                        } )
+                    } )
+                } ) );
+        } );
+    } );
 } );
