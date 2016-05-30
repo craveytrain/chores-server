@@ -1,5 +1,10 @@
-import { List, Map } from 'immutable';
-import { expect } from 'chai';
+import {
+    Map,
+    fromJS
+} from 'immutable';
+import {
+    expect
+} from 'chai';
 
 import {
     setChores,
@@ -7,76 +12,29 @@ import {
     deleteChore
 } from '../src/chores';
 
-describe( 'application logic', () => {
+describe( 'chores logic', () => {
 
     describe( 'setChores', () => {
         it( 'sets the chores to the state', () => {
-            const state = Map();
-            const chore = Map( {
-                makeBed: Map( {
-                    name: 'Make bed'
-                } )
-            } );
-            const nextState = setChores( state, chore );
-            expect( nextState )
-                .to.equal( Map( {
-                    chores: Map( {
-                        makeBed: Map( {
-                            name: 'Make bed'
-                        } )
-                    } )
-                } ) );
-        } );
-
-        it( 'converts to immutable', () => {
-            const state = Map();
-            const chores = {
+            const chore = {
                 makeBed: {
                     name: 'Make bed'
                 }
             };
-            const nextState = setChores( state, chores );
+            const nextState = setChores( Map(), chore );
             expect( nextState )
-                .to.equal( Map( {
-                    chores: Map( {
-                        makeBed: Map( {
+                .to.equal( fromJS( {
+                    chores: {
+                        makeBed: {
                             name: 'Make bed'
-                        } )
-                    } )
+                        }
+                    }
                 } ) );
         } );
-
     } );
 
     describe( 'addChore', () => {
         it( 'adds a chore to the state', () => {
-            const state = Map( {
-                makeBed: Map( {
-                    name: 'Make bed'
-                } )
-            } );
-            const chore = Map( {
-                clearTable: Map( {
-                    name: 'Clear table'
-                } )
-            } );
-            const initialState = setChores( Map(), state );
-            const nextState = addChore( initialState, chore );
-            expect( nextState )
-                .to.equal( Map( {
-                    chores: Map( {
-                        makeBed: Map( {
-                            name: 'Make bed'
-                        } ),
-                        clearTable: Map( {
-                            name: 'Clear table'
-                        } )
-                    } )
-                } ) );
-
-        } );
-
-        it( 'converts to immutable', () => {
             const state = {
                 makeBed: {
                     name: 'Make bed'
@@ -90,39 +48,38 @@ describe( 'application logic', () => {
             const initialState = setChores( Map(), state );
             const nextState = addChore( initialState, chore );
             expect( nextState )
-                .to.equal( Map( {
-                    chores: Map( {
-                        makeBed: Map( {
+                .to.equal( fromJS( {
+                    chores: {
+                        makeBed: {
                             name: 'Make bed'
-                        } ),
-                        clearTable: Map( {
+                        },
+                        clearTable: {
                             name: 'Clear table'
-                        } )
-                    } )
+                        }
+                    }
                 } ) );
-
         } );
     } );
 
     describe( 'deleteChore', () => {
         it( 'deletes a chore from the state', () => {
-            const state = Map( {
-                makeBed: Map( {
+            const state = {
+                makeBed: {
                     name: 'Make bed'
-                } ),
-                clearTable: Map( {
+                },
+                clearTable: {
                     name: 'Clear table'
-                } )
-            } );
+                }
+            };
             const initialState = setChores( Map(), state );
             const nextState = deleteChore( initialState, 'clearTable' );
             expect( nextState )
-                .to.equal( Map( {
-                    chores: Map( {
-                        makeBed: Map( {
+                .to.equal( fromJS( {
+                    chores: {
+                        makeBed: {
                             name: 'Make bed'
-                        } )
-                    } )
+                        }
+                    }
                 } ) );
         } );
     } );

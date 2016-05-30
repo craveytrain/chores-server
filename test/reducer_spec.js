@@ -12,11 +12,11 @@ describe( 'reducer', () => {
     it( 'has an initial state', () => {
         const action = {
             type: 'SET_CHORES',
-            chores: Map( {
-                makeBed: Map( {
+            chores: {
+                makeBed: {
                     name: 'Make bed'
-                } )
-            } )
+                }
+            }
         };
         const nextState = reducer( undefined, action );
         expect( nextState )
@@ -34,18 +34,18 @@ describe( 'reducer', () => {
             {
                 type: 'SET_CHORES',
                 chores: {
-					makeBed: {
-						name: 'Make bed'
-					}
-				}
+                    makeBed: {
+                        name: 'Make bed'
+                    }
+                }
             },
             {
                 type: 'ADD_CHORE',
-				chore: {
-					cleanTable: {
-						name: 'Clean table'
-					}
-				}
+                chore: {
+                    cleanTable: {
+                        name: 'Clean table'
+                    }
+                }
             },
             {
                 type: 'DELETE_CHORE',
@@ -57,10 +57,10 @@ describe( 'reducer', () => {
         expect( finalState )
             .to.equal( fromJS( {
                 chores: {
-					cleanTable: {
-						name: 'Clean table'
-					}
-				}
+                    cleanTable: {
+                        name: 'Clean table'
+                    }
+                }
             } ) );
     } );
 
