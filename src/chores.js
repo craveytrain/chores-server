@@ -1,4 +1,6 @@
-import { fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
+
+export const INITIAL_STATE = Map();
 
 export function setChores( state, chores ) {
     return state.set( 'chores', fromJS( chores ) );

@@ -1,6 +1,6 @@
-import { setChores, addChore, deleteChore } from './chores';
+import { setChores, addChore, deleteChore, INITIAL_STATE } from './chores';
 
-export default function reducer(state, action) {
+export default function reducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case 'SET_CHORES':
 			return setChores( state, action.chores );
