@@ -60,7 +60,7 @@
 
 {
 	"type": "SET_CHORES",
-	"chore": "..."
+	"chores": "..."
 }
 
 {
