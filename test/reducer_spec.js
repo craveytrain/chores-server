@@ -10,15 +10,15 @@ import reducer from '../src/reducer';
 
 describe( 'reducer', () => {
     it( 'has an initial state', () => {
-        const action = {
+        const nextState = reducer( undefined, {
             type: 'SET_CHORES',
             chores: {
                 makeBed: {
                     name: 'Make bed'
                 }
             }
-        };
-        const nextState = reducer( undefined, action );
+        } );
+
         expect( nextState )
             .to.equal( fromJS( {
                 chores: {
