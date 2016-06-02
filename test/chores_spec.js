@@ -16,7 +16,7 @@ describe( 'chores logic', () => {
 
     describe( 'setChores', () => {
         it( 'sets the chores to the state', () => {
-            const nextState = setChores( Map(), {
+            const nextState = setChores( {
                 makeBed: {
                     name: 'Make bed'
                 }
@@ -33,7 +33,7 @@ describe( 'chores logic', () => {
 
     describe( 'addChore', () => {
         it( 'adds a chore to the state', () => {
-            const initialState = setChores( Map(), {
+            const initialState = setChores( {
                 makeBed: {
                     name: 'Make bed'
                 }
@@ -59,7 +59,7 @@ describe( 'chores logic', () => {
 
     describe( 'deleteChore', () => {
         it( 'deletes a chore from the state', () => {
-            const initialState = setChores( Map(), {
+            const initialState = setChores( {
                 makeBed: {
                     name: 'Make bed'
                 },

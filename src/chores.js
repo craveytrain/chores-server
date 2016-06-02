@@ -2,8 +2,8 @@ import { Map, fromJS } from 'immutable';
 
 export const INITIAL_STATE = fromJS({ chores: {} });
 
-export function setChores( choreState, chores ) {
-    return choreState.merge( fromJS( chores ) );
+export function setChores( chores ) {
+    return Map().merge( fromJS( chores ) );
 }
 
 export function addChore( choreState, chore ) {
