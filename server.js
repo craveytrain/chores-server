@@ -2,7 +2,7 @@ const StaticServer = require('static-server');
 
 const server = new StaticServer({
   rootPath: 'public',            // required, the root of the server file tree
-  // name: 'my-http-server',   // optional, will set "X-Powered-by" HTTP header 
+  // name: 'my-http-server',   // optional, will set "X-Powered-by" HTTP header
   port: 1337,               // optional, defaults to a random port
   // host: '10.0.0.100',       // optional, defaults to any interface
   // followSymlink: true,      // optional, defaults to a 404 error
