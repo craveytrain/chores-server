@@ -4,10 +4,11 @@
   "description": "A simple chores app",
   "main": "server.js",
   "scripts": {
-    "build": "babel src -d dest",
-    "start": "babel-node index.js",
+    "start": "babel-node src/index.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "build": "babel src -d dest",
+    "serve": "node dest/index.js"
   },
   "repository": {
     "type": "git",

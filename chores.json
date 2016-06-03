@@ -1,0 +1,14 @@
+{
+    "makeBed": {
+        "name": "Make bed"
+    },
+    "clearTable": {
+        "name": "Clear table"
+    },
+    "setTable": {
+        "name": "Set table"
+    },
+    "helpTrash": {
+        "name": "Help with trash"
+    }
+}
