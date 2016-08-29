@@ -16,20 +16,22 @@ describe( 'store', () => {
 
         store.dispatch( {
             type: 'SET_CHORES',
-            chores: {
-                makeBed: {
+            chores: [
+                {
+                    id: 'makeBed',
                     name: 'Make bed'
                 }
-            }
+            ]
         } )
 
         expect( store.getState() )
             .to.equal( fromJS( {
-                chores: {
-                    makeBed: {
+                chores: [
+                    {
+                        id: 'makeBed',
                         name: 'Make bed'
                     }
-                }
+                ]
             } ) );
     } );
 } );

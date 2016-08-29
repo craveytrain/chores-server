@@ -60,21 +60,22 @@
 
 {
 	"type": "SET_CHORES",
-	"chores": "..."
+	"chores": [
+		"..."
+	]
 }
 
 {
 	"type": "ADD_CHORE",
 	"chore": {
-		"makeBed": {
-			"name": "Make bed"
-		}
+		"id": "makeBed",
+		"name": "Make bed"
 	}
 }
 
 {
 	"type": "DELETE_CHORE",
-	"chore": "makeBed"
+	"choreIdx": 0
 }
 
 {

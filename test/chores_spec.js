@@ -16,66 +16,65 @@ describe( 'chores logic', () => {
 
     describe( 'setChores', () => {
         it( 'sets the chores to the state', () => {
-            const nextState = setChores( {
-                makeBed: {
-                    name: 'Make bed'
-                }
-            } );
+            const nextState = setChores( [ {
+                id: 'makeBed',
+                name: 'Make bed'
+            } ] );
 
             expect( nextState )
-                .to.equal( fromJS( {
-                    makeBed: {
-                        name: 'Make bed'
-                    }
-                } ) );
+                .to.equal( fromJS( [ {
+                    id: 'makeBed',
+                    name: 'Make bed'
+                } ] ) );
         } );
     } );
 
     describe( 'addChore', () => {
         it( 'adds a chore to the state', () => {
-            const initialState = setChores( {
-                makeBed: {
-                    name: 'Make bed'
-                }
-            } );
+            const initialState = setChores( [ {
+                id: 'makeBed',
+                name: 'Make bed'
+            } ] );
 
             const nextState = addChore( initialState, {
-                clearTable: {
+                    id: 'clearTable',
                     name: 'Clear table'
-                }
             } );
 
             expect( nextState )
-                .to.equal( fromJS( {
-                    makeBed: {
+                .to.equal( fromJS( [
+                    {
+                        id: 'makeBed',
                         name: 'Make bed'
                     },
-                    clearTable: {
+                    {
+                        id: 'clearTable',
                         name: 'Clear table'
                     }
-                } ) );
+                ] ) );
         } );
     } );
 
     describe( 'deleteChore', () => {
         it( 'deletes a chore from the state', () => {
-            const initialState = setChores( {
-                makeBed: {
+            const initialState = setChores( [
+                {
+                    id: 'makeBed',
                     name: 'Make bed'
                 },
-                clearTable: {
+                {
+                    id: 'clearTable',
                     name: 'Clear table'
                 }
-            } );
+            ] );
 
-            const nextState = deleteChore( initialState, 'clearTable' );
+            const nextState = deleteChore( initialState, 1 );
 
             expect( nextState )
-                .to.equal( fromJS( {
-                    makeBed: {
-                        name: 'Make bed'
-                    }
-                } ) );
+                .to.equal( fromJS( [ {
+                    id: 'makeBed',
+                    name: 'Make bed'
+                } ] ) );
         } );
     } );
 } );

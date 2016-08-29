@@ -5,11 +5,11 @@ import {
     INITIAL_STATE as CHORES_INITIAL_STATE
 } from './chores';
 import {
-    Map
+    Map,
+    List
 } from 'immutable';
 
-const INITIAL_STATE = Map()
-    .merge( CHORES_INITIAL_STATE );
+const INITIAL_STATE = Map().merge( CHORES_INITIAL_STATE );
 
 export default function reducer( state = Map(), action ) {
     switch ( action.type ) {
@@ -17,10 +17,10 @@ export default function reducer( state = Map(), action ) {
         return state.update( 'chores', choreState => setChores( action.chores ) );
 
     case 'ADD_CHORE':
-        return state.update( 'chores', choreState => addChore( Map(), action.chore ) );
+        return state.update( 'chores', choreState => addChore( choreState, action.chore ) );
 
     case 'DELETE_CHORE':
-        return state.update( 'chores', choreState => deleteChore( choreState, action.choreId ) );
+        return state.update( 'chores', choreState => deleteChore( choreState, action.choreIdx ) );
     }
 
     return state;

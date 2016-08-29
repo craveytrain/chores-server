@@ -1,14 +1,18 @@
-{
-    "makeBed": {
+[
+    {
+        "id": "makeBed",
         "name": "Make bed"
     },
-    "clearTable": {
+    {
+        "id": "clearTable",
         "name": "Clear table"
     },
-    "setTable": {
+    {
+        "id": "setTable",
         "name": "Set table"
     },
-    "helpTrash": {
+    {
+        "id": "helpTrash",
         "name": "Help with trash"
     }
-}
+]
